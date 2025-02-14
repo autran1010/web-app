@@ -1,7 +1,15 @@
-import React from 'react';
-import './App.css'; 
+import React, { useState } from 'react';
+import './App.css';
 
 function App() {
+  const [message, setMessage] = useState('');
+
+  const callHelloApi = () => {
+    document.getElementById("api-response").innerText = "Hello world!";
+  };
+  
+  
+
   return (
     <div>
       <header>
@@ -21,6 +29,9 @@ function App() {
           <input type="email" id="email" placeholder="Enter your email address" required />
           <button type="submit">GET STARTED</button>
         </form>
+        <button onClick={callHelloApi}>Call Hello API</button>
+        <p id="api-response"></p>
+
       </section>
 
       <section id="features">
